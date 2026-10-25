@@ -1,0 +1,14 @@
+{
+  "name": "game_test",
+  "version": "1.0.0",
+  "description": "Multiplayer Riddle Guessing Game",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

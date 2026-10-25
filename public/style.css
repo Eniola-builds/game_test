@@ -1,0 +1,259 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --panel-bg: rgba(30, 41, 59, 0.7);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent: #10b981;
+  --accent-gold: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --radius: 16px;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Common Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Card Wrapper */
+.card-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+/* LOGIN SCREEN */
+#login-screen {
+  max-width: 420px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+#login-screen h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#login-screen p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* Inputs & Buttons */
+input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  margin-bottom: 12px;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+/* GAME SCREEN LAYOUT */
+#game-screen {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Sidebar / Players */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.player-card {
+  padding: 20px;
+}
+
+.player-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#players-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#players-list li {
+  background: rgba(15, 23, 42, 0.4);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Game Area * /
+.main-game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Riddle Header Card */
+.riddle-card {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#timer {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+#question-display {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* Game Master Controls */
+#master-controls {
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+#master-controls h3 {
+  color: var(--accent-gold);
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.master-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Chat & Guess Stream */
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+}
+
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 6px;
+  margin-bottom: 14px;
+}
+
+#chat-messages div {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.4);
+  font-size: 0.95rem;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-wrapper input {
+  margin-bottom: 0;
+}
+
+.chat-input-wrapper button {
+  width: 110px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #game-screen {
+    grid-template-columns: 1fr;
+  }
+}

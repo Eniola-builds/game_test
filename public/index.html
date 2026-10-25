@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riddel Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Login Screen -->
+  <div id="login-screen">
+    <h3>Enter Your Name</h3>
+    <input type="text"
+     id="username-input"
+      placeholder="Your name...">
+    <button id="join-btn">Join</button>
+  </div>
+
+  <!-- 2. Main Game Screen -->
+  <div id="game-screen" class="hidden">
+    
+    <!-- Player List & Scoreboard -->
+    <h3>Players Online: <span id="player-count">0</span></h3>
+    <ul id="players"></ul>
+
+    <!-- Timer & Riddle Header -->
+    <p class="timer-text">Time Left: <span id="timer">40</span>s</p>
+    <p id="question-display" class="riddle-text">Waiting for Game Master...</p>
+
+    <!-- Game Master Controls -->
+    <div id="master-controls" class="master-panel hidden">
+      <h4>Game Master Panel</h4>
+      <input type="text" id="qm-question" placeholder="Type riddle here...">
+      <input type="text" id="qm-answer" placeholder="Type answer here...">
+      <button id="set-q-btn">Set Riddle</button>
+      <button id="start-game-btn">Start Game</button>
+    </div>
+
+    <!-- Chat Feed -->
+    <div id="chat-messages" class="chat-box"></div>
+
+    <!-- Input Bar -->
+    <div class="input-group">
+      <input type="text" id="guess-input" placeholder="Type your guess...">
+      <button id="send-btn">Send</button>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
